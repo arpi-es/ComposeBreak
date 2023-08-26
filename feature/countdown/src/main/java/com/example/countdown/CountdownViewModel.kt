@@ -13,14 +13,14 @@ class CountdownViewModel : ViewModel() {
 
 
 data class CountdownState(
-    val counterState: CounterState = CounterState.INIT,
+    val counterState: CounterState = CounterState.INITIAL,
     val workingState: WorkingState = WorkingState.REST,
     val remainingTime : Int = REST_DURATION
 )
 
 
 enum class CounterState {
-    INIT, PLAY, PAUSE
+    INITIAL, PLAY, PAUSE
 }
 
 enum class WorkingState {
