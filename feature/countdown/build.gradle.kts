@@ -42,8 +42,12 @@ android {
 dependencies {
     implementation(project(":library:designsystem"))
     implementation("androidx.core:core-ktx:1.10.1")
-    implementation(platform("org.jetbrains.kotlin:kotlin-bom:1.8.0"))
-    implementation("androidx.appcompat:appcompat:1.6.1")
+
+    val lifecycle_version = "2.6.1"
+
+    // ViewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+
 
 
 }
