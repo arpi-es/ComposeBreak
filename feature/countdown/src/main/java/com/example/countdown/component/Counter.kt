@@ -33,7 +33,7 @@ private fun CounterPreview() {
 
     ComposeBreakTheme {
         Surface {
-            Counter("32", "54")
+            Counter(minutes = "32", seconds = "54")
         }
 
     }
