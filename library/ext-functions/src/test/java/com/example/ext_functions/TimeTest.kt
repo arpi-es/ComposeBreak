@@ -26,4 +26,12 @@ class TimeTest {
         Assert.assertEquals(121.seconds, 1)
     }
 
+    @Test
+    fun TimetoTwoDigitFormat() {
+        Assert.assertEquals(0.seconds.toString().timeToTwoDigitFormat(), "00")
+        Assert.assertEquals(1.seconds.toString().timeToTwoDigitFormat(), "01")
+        Assert.assertEquals(10.seconds.toString().timeToTwoDigitFormat(), "10")
+        Assert.assertEquals(20.seconds.toString().timeToTwoDigitFormat(), "20")
+        Assert.assertEquals(100.seconds.toString().timeToTwoDigitFormat(), "40")
+    }
 }
