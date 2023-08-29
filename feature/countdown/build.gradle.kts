@@ -41,6 +41,7 @@ android {
 
 dependencies {
     implementation(project(":library:designsystem"))
+    implementation(project(":library:ext-functions"))
     implementation("androidx.core:core-ktx:1.10.1")
 
     val lifecycle_version = "2.6.1"
