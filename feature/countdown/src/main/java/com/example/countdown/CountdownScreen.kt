@@ -12,6 +12,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.countdown.component.Counter
 import com.example.countdown.component.CounterController
+import com.example.countdown.model.CountdownState
+import com.example.countdown.model.CounterState
 import com.example.designsystem.ThemePreviews
 import com.example.designsystem.theme.ComposeBreakTheme
 
@@ -26,6 +28,7 @@ fun CountdownRoute(
 @Composable
 fun CountdownScreen(
     counterState: CounterState,
+    countdownState: CountdownState,
     onResetClicked: () -> Unit,
     onPlayClicked: () -> Unit,
 ) {
@@ -36,7 +39,7 @@ fun CountdownScreen(
         horizontalAlignment = Alignment.CenterHorizontally
 
     ) {
-        Counter(minutes = "32", seconds = "45")
+        Counter(countdownState)
         Spacer(modifier = Modifier.height(20.dp))
         CounterController(
             counterState = counterState,
@@ -54,6 +57,7 @@ private fun CountdownScreenPreview() {
         Surface {
             CountdownScreen(
                 counterState = CounterState.INITIAL,
+                countdownState = CountdownState(),
                 onResetClicked = {},
                 onPlayClicked = {},
             )

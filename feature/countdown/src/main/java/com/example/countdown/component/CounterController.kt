@@ -11,7 +11,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.example.countdown.CounterState
+import com.example.countdown.model.CounterState
 import com.example.designsystem.ThemePreviews
 import com.example.designsystem.theme.ComposeBreakTheme
 
