@@ -21,13 +21,16 @@ import com.example.designsystem.theme.ComposeBreakTheme
 fun CountdownRoute(
     viewModel: CountdownViewModel,
 ) {
-//    CountdownScreen("", "")
+    CountdownScreen(
+        countdownState = viewModel.countdownState.value,
+        onPlayClicked = {viewModel.startCountdown()},
+        onResetClicked = {viewModel.resetCountdown()})
 }
 
 
 @Composable
 fun CountdownScreen(
-    counterState: CounterState,
+
     countdownState: CountdownState,
     onResetClicked: () -> Unit,
     onPlayClicked: () -> Unit,
@@ -42,7 +45,7 @@ fun CountdownScreen(
         Counter(countdownState)
         Spacer(modifier = Modifier.height(20.dp))
         CounterController(
-            counterState = counterState,
+            counterState = countdownState.counterState,
             onResetClicked = onResetClicked,
             onPlayClicked = onPlayClicked
         )
@@ -56,7 +59,6 @@ private fun CountdownScreenPreview() {
     ComposeBreakTheme {
         Surface {
             CountdownScreen(
-                counterState = CounterState.INITIAL,
                 countdownState = CountdownState(),
                 onResetClicked = {},
                 onPlayClicked = {},
